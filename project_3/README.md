@@ -1,14 +1,18 @@
-# Project Name: **Image Filtering and Gaussian Additive Noise**
+# Project Name: **Simulation of impulse noise & DRID/Median Filtering**
+
+<div align="center">
+  <img src="https://i.sstatic.net/4wCcW.png" alt="Hosted Image" />
+</div>
+
+---
 
 ## Introduction
 
 This project includes a set of Python functions for performing various filtering comparisons . The project covers:
 
-- Statistical evaluation of an image (STD and Mean)
-- Applies Gaussian Noise to Images
+- Applies (random impulse noise) & (salt & pepper noise) to Images
 - Mean Filtering
-- Smart Filtering
-- Spatial Domain Linear Filtering
+- Differential rank impulse detector
 - Comparsions ultizing RMSE & PSNR
 
 This README provides instructions on setting up the Python environment using `venv` and installing the required dependencies from `requirements.txt`.
@@ -86,7 +90,7 @@ After setting up the environment and installing the dependencies, you can run th
 For example, you can run the image analysis and contrast enhancement functions in the project with:
 ```bash
 
-cd project_2
+cd project_3
 python main.py
 
 ```
@@ -103,6 +107,8 @@ deactivate
 
 This will return you to the system's default Python environment.
 
+
+
 ## Additional Notes
 
 - Make sure you have **Python 3.6 or higher** installed on your system.
@@ -111,9 +117,3 @@ This will return you to the system's default Python environment.
 
 
 Resources used in this project for better understanding of convolution kernel aside from slides
-
-[CLICK HERE](https://www.geeksforgeeks.org/how-to-make-a-table-in-python/)
-
-[CLICK HERE](https://www.geeksforgeeks.org/types-of-convolution-kernels/)
-
-[CLICK HERE](https://www.askpython.com/python-modules/tabulate-tables-in-python)
