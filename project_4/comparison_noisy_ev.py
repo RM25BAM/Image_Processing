@@ -14,3 +14,4 @@ def comparison_display(img, noisy_img, filter_img, rmse, psnr, figure_name):
     fig.suptitle(f'RMSE: {rmse:.2f} %, PSNR: {psnr:.2f} dB', fontsize=12, y=0.95)
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, figure_name))
+    plt.show()

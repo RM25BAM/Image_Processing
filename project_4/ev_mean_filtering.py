@@ -1,18 +1,20 @@
 import numpy as np
 from scipy.ndimage import generic_filter
 def rank_order_EV_filtering(noisy_img, window_size):
-    global_std_dev = np.std(noisy_img)  
-    def adaptive_ev_filter(window):
-        local_std_dev = np.std(window)
-        local_mean = np.mean(window)
-        central_pixel = window[len(window) // 2]
-        weight = min(1, global_std_dev / (local_std_dev + 1e-5))  
-        return (weight * local_mean) + ((1 - weight) * central_pixel)
-    pad_size = window_size // 2
+    stand = np.std(noisy_img)
+    pad_size = window_size // 2 # mirroring
     padded_image = np.pad(noisy_img, pad_size, mode='reflect')
-    filtered_img = generic_filter(padded_image, adaptive_ev_filter, size=window_size)
-    filtered_img = filtered_img[pad_size:-pad_size, pad_size:-pad_size]  
-    return filtered_img
+    filtered_image = np.zeros_like(noisy_img)
+    for i in range(noisy_img.shape[0]): 
+        for j in range(noisy_img.shape[1]):
+            window = padded_image[i:i + window_size, j:j + window_size]
+            flatten = window.flatten()
+            central_pixel = noisy_img[i, j]
+            ev_interval = [px for px in flatten if abs(px - central_pixel) <= stand]
+            filtered_image[i, j] = np.mean(ev_interval) if ev_interval else central_pixel
+    return filtered_image
+
+
 
 
 

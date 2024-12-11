@@ -1,5 +1,8 @@
-import numpy as np, ev_mean_filtering, GNAF, comparison_noisy_ev
+import numpy as np
+import ev_mean_filtering
+import GNAF
 from tabulate import tabulate
+import comparison_noisy_ev
 def analyze_image(img):
     noise_fraction = float(input("\nInput the noise fraction for image: "))
     noisy_img = GNAF.GNAF(img, noise_fraction)
@@ -18,6 +21,19 @@ def analyze_image(img):
     psnr = 20 * np.log10(max_pixel_value / rmse)
     table = [
             [f"Original v. Filtered"],
+            ["RMSE", f"{rmse} %"],
+            ["PSNR", f"{psnr} dB"]
+            ]
+    print(tabulate(table, tablefmt="grid"))
+    print("\n")
+    filtered_img = ev_mean_filtering.rank_order_EV_filtering(noisy_img, window_size)
+    diff = noisy_img - filtered_img
+    mse = np.mean(diff**2)
+    rmse = np.sqrt(mse)
+    max_pixel_value = 255  
+    psnr = 20 * np.log10(max_pixel_value / rmse)
+    table = [
+            [f"Noisy v. Filtered"],
             ["RMSE", f"{rmse} %"],
             ["PSNR", f"{psnr} dB"]
             ]
