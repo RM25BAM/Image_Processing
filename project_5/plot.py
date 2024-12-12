@@ -1,0 +1,25 @@
+from matplotlib import pyplot as plt
+import os
+def plot(img, edged_image, sharpened_image, combined_image, figure_name):
+    output_dir = './project_5/image_output'
+    os.makedirs(output_dir, exist_ok=True)
+    plt.figure(figsize=(10, 8))
+    plt.subplot(2, 2, 1)
+    plt.title("Original Image")
+    plt.imshow(img, cmap='gray')
+    plt.axis('off')
+    plt.subplot(2, 2, 2)
+    plt.title("Sobel Edge Detection")
+    plt.imshow(edged_image, cmap='gray')
+    plt.axis('off')
+    plt.subplot(2, 2, 3)
+    plt.title("Unsharp Masking")
+    plt.imshow(sharpened_image, cmap='gray')
+    plt.axis('off')
+    plt.subplot(2, 2, 4)
+    plt.title("Linear Combination")
+    plt.imshow(combined_image, cmap='gray')
+    plt.axis('off')
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, figure_name))
+    plt.show()
