@@ -3,7 +3,6 @@ from matplotlib import pyplot as plt
 def sobel_edge(img):
     if not isinstance(img, np.ndarray) or img.ndim != 2:
         raise ValueError("Input must be a 2D numpy array representing a grayscale image.")
-    # Sobel kernels
     sobel_x = np.array([[-1, 0, 1], 
                         [-2, 0, 2], 
                         [-1, 0, 1]])
