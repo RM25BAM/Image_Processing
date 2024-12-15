@@ -1,34 +1,52 @@
-#   Image Processing
+# 📷 Image Processing Repository
 
-In this repo is all the info for image processing class
-There is also a directory with slides that are utilized in the class. 
-
----
-
-**Project 1**
-[Click Here](./project_1/README.md)
+Welcome to the **Image Processing** repository! This repository contains all the materials, resources, and projects used in the Image Processing class. You'll find comprehensive information, a directory of lecture slides, and links to individual projects designed to deepen your understanding of image processing techniques.
 
 ---
 
-**Project 2**
-[Click Here](./project_2/README.md)
+## 📚 Course Materials
+- A directory of **slides** used during lectures is available, providing additional insights and explanations.
+[Click Here](./Slides_Image_Processing)
 
 ---
 
-**Project 3**
-[Click Here](./project_3/README.md)
+## 📂 Projects
 
----
+Each project is tailored to explore specific aspects of image processing. Click on the links below to navigate to the corresponding project details and resources.
 
-**Project 4**
-[Click Here](./project_4/README.md)
+### **🖼️ Project 1**
+[View Project Details](./project_1/README.md)
 
----
+Grade - 130%
 
-**Project 5**
-[Click Here](./project_5/README.md)
+### **🎨 Project 2**
+[View Project Details](./project_2/README.md)
 
----
+Grade - 110%
 
-**Project 6**
-[Click Here](./project_6/README.md)
+
+### **🕵️ Project 3**
+[View Project Details](./project_3/README.md)
+
+Grade - 120%
+
+### **🔍 Project 4**
+[View Project Details](./project_4/README.md)
+
+Original - 40%
+Redo Grade - 100%
+
+### **🧩 Project 5**
+[View Project Details](./project_5/README.md)
+
+Grade - 100%
+
+### **🤖 Project 6**
+[View Project Details](./project_6/README.md)
+
+Grade - 100%
+
+## 💡 How to Use This Repository
+1. Clone the repository to your local system:
+   ```bash
+   git clone https://github.com/RM25BAM/Image_Processing.git
